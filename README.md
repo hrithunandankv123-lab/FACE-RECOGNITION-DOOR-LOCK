@@ -13,19 +13,26 @@ Web Based Face Registration Users can register their face through the FaceLock w
 Automatic Relocking the servo can return the door to the locked position after unlocking.
 User Friendly Setup face registration and recognition can be managed through the FaceLock interface.
 
- ##Hardware
+ ## Hardware
+
+ 
  AI-Thinker ESP32-CAM
  Servo motor
  Buzzer
  Push button
  Power supply
  Door/Latch Mechanism  (physical locking system if needed)
-Software
+ 
+## Software
+
+
 Python
 OpenCV
 Arduino IDE
 DroidCam
 Flask
 
-##Why I’m Building This
+## Why I’m Building This
+
+
 I am building FACE RECOGNITION DOOR LOCK to create a smarter and more secure door-lock system using face recognition. Instead of relying only on traditional keys or passwords, the system can recognize an authorized person and allow access.
