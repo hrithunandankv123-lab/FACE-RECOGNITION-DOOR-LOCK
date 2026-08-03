@@ -1,6 +1,6 @@
 # FACE-RECOGNITION-DOOR-LOCK
 This project is a Face Recognition Door Lock using an AI Thinker ESP32 CAM. It is designed to recognize authorized faces and unlock a door using a servo motor. An unknown face can activate a buzzer.(FACELOCK is a open website It allows users to register their face through a web interface and securely unlock the door using an authorized face, while unknown faces trigger a buzzer alert.)
-Features
+##Features
 Face Recognition which recognizes registered users using a camera and OpenCV.
 Secure Door Unlocking - unlocks the door when an authorized face is detected.
 Unknown Person Detection which Identifies faces that are not registered.
@@ -10,7 +10,7 @@ Web Based Face Registration Users can register their face through the FaceLock w
 Automatic Relocking the servo can return the door to the locked position after unlocking.
 User Friendly Setup face registration and recognition can be managed through the FaceLock interface.
 
- Hardware
+ ##Hardware
  AI-Thinker ESP32-CAM
  Servo motor
  Buzzer
@@ -23,5 +23,6 @@ OpenCV
 Arduino IDE
 DroidCam
 Flask
-Why I’m Building This
+
+##Why I’m Building This
 I am building FACE RECOGNITION DOOR LOCK to create a smarter and more secure door-lock system using face recognition. Instead of relying only on traditional keys or passwords, the system can recognize an authorized person and allow access.
