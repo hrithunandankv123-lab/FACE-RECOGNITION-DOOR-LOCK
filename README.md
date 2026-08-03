@@ -36,3 +36,5 @@ Flask
 
 
 I am building FACE RECOGNITION DOOR LOCK to create a smarter and more secure door-lock system using face recognition. Instead of relying only on traditional keys or passwords, the system can recognize an authorized person and allow access.
+---
+made by Hrithunandan
