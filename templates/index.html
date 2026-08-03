@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaceLock</title>
+
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg-card: #ffffff;
+            --border: #e2e8f0;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--text-main);
+            background-color: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            margin-top: 0;
+            font-weight: 400;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .connection-card {
+            background: var(--bg-card);
+            margin-top: 32px;
+            padding: 24px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .connection-card h2 {
+            margin-top: 0;
+            font-size: 1.25rem;
+        }
+
+        #espStatus {
+            font-weight: 600;
+            margin: 16px 0 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🔐 FaceLock</h1>
+        <h2 class="subtitle">Smart Face Recognition Door Lock</h2>
+        <p>Welcome! Let's set up your FaceLock system.</p>
+
+        <!-- FaceLock Setup -->
+        <a href="/setup" class="btn">🚀 START SETUP</a>
+
+        <!-- ESP32-CAM Connection -->
+        <div class="connection-card">
+            <h2>📡 ESP32-CAM</h2>
+            <p id="espStatus">ESP32-CAM: 🔴 Not Connected</p>
+            <button class="btn" onclick="checkESP32()">📡 Connect ESP32-CAM</button>
+        </div>
+    </div>
+
+    <script>
+        async function checkESP32() {
+            const status = document.getElementById("espStatus");
+            status.innerText = "ESP32-CAM: 🟡 Checking...";
+
+            try {
+                const response = await fetch("/api/esp32/status");
+                const data = await response.json();
+
+                if (data.connected) {
+                    status.innerText = "ESP32-CAM: 🟢 Connected";
+                } else {
+                    status.innerText = "ESP32-CAM: 🔴 Not Connected";
+                }
+            } catch (error) {
+                console.error("Status check failed:", error);
+                status.innerText = "ESP32-CAM: 🔴 Connection Error";
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FaceLock - Register Face</title>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin: 30px;
+        }
+
+        video {
+            width: 90%;
+            max-width: 500px;
+            border-radius: 15px;
+        }
+
+        button {
+            padding: 15px 25px;
+            margin: 10px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        #status {
+            font-size: 20px;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1> FaceLock</h1>
+
+<h2>Register Your Face</h2>
+
+<p>Allow camera access and look at the camera.</p>
+
+<video id="camera" autoplay playsinline></video>
+
+<br>
+
+<button onclick="startCamera()">
+    Start Camera
+</button>
+
+<button onclick="registerFace()">
+    Register My Face
+</button>
+
+<h2 id="status">
+    Ready
+</h2>
+
+<script>
+
+let video = document.getElementById("camera");
+
+let samples = [];
+
+async function startCamera() {
+
+    try {
+
+        const stream = await navigator.mediaDevices.getUserMedia({
+            video: true,
+            audio: false
+        });
+
+        video.srcObject = stream;
+
+        document.getElementById("status").innerText =
+            "Camera ready. Click Register My Face.";
+
+    } catch (error) {
+
+        document.getElementById("status").innerText =
+            "Camera permission was denied.";
+    }
+}
+
+
+async function registerFace() {
+
+    if (!video.srcObject) {
+
+        alert("Start the camera first.");
+        return;
+    }
+
+    samples = [];
+
+    document.getElementById("status").innerText =
+        "Registering... Please look at the camera.";
+
+    const canvas = document.createElement("canvas");
+
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+
+    const context = canvas.getContext("2d");
+
+    for (let i = 0; i < 30; i++) {
+
+        context.drawImage(
+            video,
+            0,
+            0,
+            canvas.width,
+            canvas.height
+        );
+
+        samples.push(
+            canvas.toDataURL("image/jpeg", 0.8)
+        );
+
+        document.getElementById("status").innerText =
+            "Samples: " + (i + 1) + "/30";
+
+        await new Promise(
+            resolve => setTimeout(resolve, 300)
+        );
+    }
+
+    document.getElementById("status").innerText =
+        "Uploading face samples...";
+
+    const response = await fetch("/register", {
+
+        method: "POST",
+
+        headers: {
+            "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({
+            images: samples
+        })
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+
+        document.getElementById("status").innerText =
+            " Face registered successfully!";
+
+        setTimeout(function() {
+            window.location.href = "/ready";
+        }, 1500);
+
+    } else {
+
+        document.getElementById("status").innerText =
+            "❌ " + result.message;
+    }
+}
+
+</script>
+
+</body>
+
+</html>
