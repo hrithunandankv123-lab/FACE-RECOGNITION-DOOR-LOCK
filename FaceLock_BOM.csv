@@ -1,0 +1,7 @@
+Item,Purpose,Quantity,Purchase Link
+AI-Thinker ESP32-CAM with OV2640 Camera,"Main controller, Wi-Fi communication, and camera",1,https://www.dnatechindia.com/modules/esp-32-cam-development-board-with-camera-module-india.html
+SG90 9G Micro Servo Motor,Moves the door lock between locked and unlocked positions,1,https://thinkrobotics.com/collections/servo-motors-and-servo-motor-accessories-online/products/sg90-9g-micro-servo-motor
+5V Active Buzzer,Sounds an alert when an unknown face is detected,1,https://www.robocraze.com/products/active-buzzer-module
+ESP32-CAM USB Programmer / FTDI Programmer,Uploads firmware to the ESP32-CAM,1,https://www.amazon.in/s?k=ESP32-CAM+USB+programmer
+Jumper Wires,"Connects the ESP32-CAM, servo, buzzer, and power connections",1 set,https://www.robu.in/product/10-wire-male-to-female-jumper-wires-20cm/
+5V Power Supply,Provides suitable power for the project electronics and servo,1,https://www.amazon.in/s?k=5V+power+supply+module+electronics
