@@ -1,7 +1,7 @@
 # Face Recognition Door Lock
 
-# Project Thumbnail
-![Thumbnail](thumbnail2.png)
+## Project Thumbnail
+![FaceLock Thumbnail](thumbnail2.png)
 ## Features
 - Face recognition
 - Automatic door unlock
