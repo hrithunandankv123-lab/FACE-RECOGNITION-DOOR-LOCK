@@ -36,15 +36,15 @@
 7. Door locks again after 5 seconds.
 
 ## Project Structure
-FaceLock_ESP32CAM.ino
-CameraWebServer.ino
-app.py
-collect_faces.py
-train_face.py
-face_recognition.py
-requirements.txt
-templates/
-user_faces/
+- FaceLock_ESP32CAM.ino
+- CameraWebServer.ino
+- app.py
+- collect_faces.py
+- train_face.py
+- face_recognition.py
+- requirements.txt
+- templates/
+- user_faces/
 
 ## Wiring Diagram
 ![Wiring Diagram](circuit_of_door_lock.png)
