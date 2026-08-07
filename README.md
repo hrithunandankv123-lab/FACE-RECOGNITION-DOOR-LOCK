@@ -46,7 +46,7 @@ templates/
 user_faces/
 
 ## Wiring Diagram
-(Add your wiring image)
+![Wiring Diagram](circuit%20of%20door%20lock.png)
 
 ## Bill of Materials
 (Add the BOM table or mention the CSV.)
