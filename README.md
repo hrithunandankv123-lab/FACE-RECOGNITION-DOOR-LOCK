@@ -1,6 +1,7 @@
 # Face Recognition Door Lock
 
-(Thumbnail)
+# Project Thumbnail
+![Thumbnail](thumbnail2.0.png)
 ## Features
 - Face recognition
 - Automatic door unlock
@@ -46,7 +47,7 @@ templates/
 user_faces/
 
 ## Wiring Diagram
-![Wiring Diagram](circuit%20of%20door%20lock.png)
+
 
 ## Bill of Materials
 (Add the BOM table or mention the CSV.)
