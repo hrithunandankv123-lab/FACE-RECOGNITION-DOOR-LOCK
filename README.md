@@ -1,43 +1,64 @@
-# FACE-RECOGNITION-DOOR-LOCK
-This project is a Face Recognition Door Lock using an AI Thinker ESP32 CAM. It is designed to recognize authorized faces and unlock a door using a servo motor. An unknown face can activate a buzzer.(FACELOCK is a open website It allows users to register their face through a web interface and securely unlock the door using an authorized face, while unknown faces trigger a buzzer alert.)
+# Face Recognition Door Lock
 
-The goal of FACE RECOGNITION DOOR LOCKis to develop a smart and secure door lock system that uses face recognition to identify authorized users and control access to a door.
-
+(Thumbnail)
 ## Features
+- Face recognition
+- Automatic door unlock
+- Unknown face buzzer alert
+- ESP32-CAM live camera
+- Wi-Fi communication
+- FaceLock web interface
 
+## Hardware
+- AI Thinker ESP32-CAM
+- SG90 Servo Motor
+- Active Buzzer
+- Push Button
+- Jumper Wires
+- 5V Power Supply
 
-Face Recognition which recognizes registered users using a camera and OpenCV.
-Secure Door Unlocking - unlocks the door when an authorized face is detected.
-Unknown Person Detection which Identifies faces that are not registered.
-Buzzer Alert Activates an alert when an unknown person is detected.
-Servo Controlled Lock automatically controls the door lock using a servo motor.
-Web Based Face Registration Users can register their face through the FaceLock website.
-Automatic Relocking the servo can return the door to the locked position after unlocking.
-User Friendly Setup face registration and recognition can be managed through the FaceLock interface.
-
- ## Hardware
-
- 
- AI-Thinker ESP32-CAM
- Servo motor
- Buzzer
- Push button
- Power supply
- Door/Latch Mechanism  (physical locking system if needed)
- 
 ## Software
+- Arduino IDE
+- Python
+- Flask
+- OpenCV
+- ESP32Servo Library
 
+## How it Works
+1. ESP32-CAM connects to Wi-Fi.
+2. Camera captures faces.
+3. FaceLock website registers users.
+4. Python/OpenCV recognizes faces.
+5. If authorized → Servo unlocks.
+6. If unknown → Buzzer sounds.
+7. Door locks again after 5 seconds.
 
-Python
-OpenCV
-Arduino IDE
-DroidCam
-Flask
+## Project Structure
+FaceLock_ESP32CAM.ino
+CameraWebServer.ino
+app.py
+collect_faces.py
+train_face.py
+face_recognition.py
+requirements.txt
+templates/
+user_faces/
 
-## Why I’m Building This
+## Wiring Diagram
+(Add your wiring image)
 
+## Bill of Materials
+(Add the BOM table or mention the CSV.)
 
-I am building FACE RECOGNITION DOOR LOCK to create a smarter and more secure door-lock system using face recognition. Instead of relying only on traditional keys or passwords, the system can recognize an authorized person and allow access.
+## Website
+https://facelock-pgd8.onrender.com
 
----
-made by Hrithunandan
+## Future Improvements
+- Multiple users
+- Mobile app
+- Cloud database
+- Event logs
+- Email/Telegram alerts
+
+## License
+MIT License
