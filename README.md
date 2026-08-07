@@ -50,7 +50,9 @@ user_faces/
 ![Wiring Diagram](circuit_of_door_lock.png)
 
 ## Bill of Materials
-(Add the BOM table or mention the CSV.)
+
+The complete Bill of Materials :
+- [FaceLock_BOM.csv](FaceLock_BOM.csv)
 
 ## Website
 https://facelock-pgd8.onrender.com
