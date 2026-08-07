@@ -12,6 +12,7 @@
 ## Hardware
 - AI Thinker ESP32-CAM
 - SG90 Servo Motor
+- ESP32-CAM USB Programmer / FTDI Programmer
 - Active Buzzer
 - Push Button
 - Jumper Wires
