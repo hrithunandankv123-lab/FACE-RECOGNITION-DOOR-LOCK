@@ -51,6 +51,15 @@ user_faces/
 
 ## Bill of Materials
 
+| Component | Quantity |
+|-----------|---------:|
+| AI-Thinker ESP32-CAM | 1 |
+| SG90 Servo Motor | 1 |
+| Active Buzzer | 1 |
+| Jumper Wires | 1 Set |
+| 5V Power Supply | 1 |
+| ESP32-CAM USB Programmer | 1 |
+
 The complete Bill of Materials :
 - [FaceLock_BOM.csv](FaceLock_BOM.csv)
 
